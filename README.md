@@ -1,7 +1,6 @@
 # SnakeGame
 Snake game for COMP801, similar to those once gracing the classic Nokia phones of the late nineties and early nougties
 
-"""
 Readme!
 On main menu, select your options using the up and down keys (or w and s), then use the 'Enter' key to 
 toggle option on or off.
@@ -25,7 +24,6 @@ Using the escape key from the main menu will close the game entirely.
 
 Using the 'P' button while in game will pause the game. 
 
-"""
 
 
 
