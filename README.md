@@ -1,6 +1,21 @@
 # SnakeGame
 Snake game for COMP801, similar to those once gracing the classic Nokia phones of the late nineties and early nougties
 
+Quickstart:
+## Controls
+- Arrow Keys or WASD → Move snake
+- Enter → Toggle menu options
+- ESC → Return to menu / Quit
+- P → Pause
+- F5 → Debug mode
+
+## Notes
+Includes:
+- Optional borders
+- Optional worm timer
+- Optional speed increase
+- Debug overlay
+
 Readme!
 On main menu, select your options using the up and down keys (or w and s), then use the 'Enter' key to 
 toggle option on or off.
