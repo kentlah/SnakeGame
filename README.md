@@ -1,39 +1,151 @@
 # SnakeGame
-Snake game for COMP801, similar to those once gracing the classic Nokia phones of the late nineties and early nougties
 
-Quickstart:
+A Snake game implemented in Python using Pygame.
+
+This project demonstrates:
+
+-   Object-oriented design
+-   Game loop architecture
+-   Event-driven input handling
+-   Collision detection
+-   Configurable gameplay options
+-   Debug overlay implementation
+
+------------------------------------------------------------------------
+
+## Requirements
+
+-   Python 3.x
+-   pygame
+
+Install dependency:
+
+    pip install pygame
+
+------------------------------------------------------------------------
+
+## How to Run
+
+From the project directory:
+
+    python Ass4SnakeFinal.py.py
+
+The game launches into the main menu.
+
+------------------------------------------------------------------------
+
+## Game Overview
+
+-   Window size: 640 x 480
+-   Grid size: 10 x 10 pixel blocks
+-   Frame rate controlled dynamically by snake speed
+-   Initial snake speed: 10
+-   Maximum snake speed: 30
+-   Score increases by 10 per worm eaten
+
+------------------------------------------------------------------------
+
 ## Controls
-- Arrow Keys or WASD → Move snake
-- Enter → Toggle menu options
-- ESC → Return to menu / Quit
-- P → Pause
-- F5 → Debug mode
 
-## Notes
-Includes:
-- Optional borders
-- Optional worm timer
-- Optional speed increase
-- Debug overlay
+Movement: - Arrow Keys or WASD → Move snake
 
-Readme!
-On main menu, select your options using the up and down keys (or w and s), then use the 'Enter' key to 
-toggle option on or off.
-Select 'start game' and hit enter.
+Menu: - Up / W → Move selection up - Down / S → Move selection down -
+Enter → Toggle option / Start game - Escape → Quit from menu
 
-I was going to get rid of it, but I made a 'debug' menu - launch it using F5 in game.
-In early iteration I was having trouble coding the worm timer and snake speed functions. It also helped
-to dial in the speed and time, although I think the current variables set might still be a bit clunky.
-(Speed and time seem fair for the current screen size, but would require adjusting if screen/game area 
-was increased)
+In-Game: - P → Pause / Unpause - Escape → Return to main menu (resets
+game) - F5 → Toggle debug mode
 
-To move the snake in game, use direction keys on keyboard, or the WASD keys:
-    W = UP
-    A = LEFT
-    S = DOWN
-    D = RIGHT
-    
-Using the escape key in game returns you to the menu screen (which in turn resets the game)
+Game Over Screen: - Mouse Click → Return to main menu - Escape → Quit
+
+------------------------------------------------------------------------
+
+## Gameplay Mechanics
+
+### Snake
+
+-   Moves in 10-pixel increments
+-   Cannot reverse direction directly
+-   Grows when eating a worm
+-   Collision detection includes:
+    -   Self-collision
+    -   Border collision (if borders enabled)
+-   Wraparound behavior when borders are disabled
+
+### Worm
+
+-   Spawns at random grid-aligned positions
+-   Respawns when eaten
+-   Tracks spawn time for timer logic
+
+------------------------------------------------------------------------
+
+## Menu Options
+
+The following options can be toggled from the main menu:
+
+-   Borders
+    -   On: Collision with screen edges ends the game\
+    -   Off: Snake wraps around screen edges
+-   Score
+    -   Displays score in top-left corner
+-   Worm Timer
+    -   Worm despawns after 10 seconds\
+    -   If snake length \> 3: last segment is removed\
+    -   If snake length ≤ 3: game ends
+-   Increase Speed
+    -   Snake speed increases by 1 each time a worm is eaten\
+    -   Maximum speed: 30
+
+------------------------------------------------------------------------
+
+## Debug Mode (F5)
+
+Displays real-time debugging information:
+
+-   Worm position
+-   Snake head position
+-   Current speed
+-   Worm timer countdown
+-   Current snake length
+
+------------------------------------------------------------------------
+
+## Architecture Overview
+
+### Classes
+
+Snake - Handles movement, direction changes, growth, and collision
+detection - Maintains body positions as a list - Supports speed
+increases
+
+Worm - Handles spawning logic - Tracks spawn time for timer feature
+
+Game - Manages overall game state - Handles menu system - Controls game
+loop - Manages pause functionality - Draws UI elements and debug overlay
+
+------------------------------------------------------------------------
+
+## Technical Concepts Demonstrated
+
+-   Game loop design
+-   State management
+-   Modular class structure
+-   Collision detection logic
+-   Input handling with pygame
+-   Conditional gameplay features
+-   Real-time debugging overlay
+
+------------------------------------------------------------------------
+
+## Potential Improvements
+
+-   Sound effects
+-   High score persistence
+-   Improved UI styling
+-   Adjustable difficulty levels
+-   Configurable grid size
+-   Refactoring menu into separate component
+
 
 Using the escape key from the main menu will close the game entirely.
 
